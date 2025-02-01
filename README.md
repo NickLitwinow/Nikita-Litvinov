@@ -4,9 +4,6 @@
   <img width="1425" alt="Screenshot 2025-02-01 at 23 52 11" src="https://github.com/user-attachments/assets/d5b50f6f-5070-43ef-8656-6bca1d0d0436" />
 </div>
 
-### A modern, dynamic portfolio website built with React.
-Этот проект объединяет данные из GitHub, современные анимации и удобный интерфейс для демонстрации проектов, социальных ссылок и активности на GitHub.
-
 ## О проекте
 
 **React Portfolio** — это современное портфолио, которое:
