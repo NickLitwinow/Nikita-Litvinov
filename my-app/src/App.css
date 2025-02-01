@@ -176,9 +176,9 @@ a {
   display: inline-block;
   background: #eee;
   color: #333;
-  padding: 3px 7px;
-  border-radius: 3px;
-  margin: 5px 2px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  margin: 5px 3px;
   font-size: 0.8rem;
 }
 
