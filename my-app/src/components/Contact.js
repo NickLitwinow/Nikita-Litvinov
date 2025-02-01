@@ -11,7 +11,7 @@ const Contact = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
-            <a href="mailto:nicklitvinow@gmail.com&body=привет?subject=вопрос"" className="contact-link">
+            <a href="mailto:nicklitvinow@gmail.com&body=привет?subject=вопрос" className="contact-link">
                 <FaPaperPlane className="paper-plane-icon" />
                 <span>Email Me</span>
             </a>
