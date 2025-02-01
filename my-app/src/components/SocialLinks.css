@@ -1,0 +1,28 @@
+.social-link {
+    position: relative;
+    font-size: 2rem;
+    color: inherit;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-link .tooltip {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.social-link:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
