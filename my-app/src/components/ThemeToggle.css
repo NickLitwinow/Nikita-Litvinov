@@ -1,0 +1,10 @@
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 1.8rem;
+    z-index: 1000;
+    /* Цвет иконки берём из переменной, чтобы он менялся вместе с темой */
+    color: var(--text-color);
+}

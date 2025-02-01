@@ -1,16 +1,66 @@
-/* Импорт интересного шрифта */
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-body {
-  margin: 0;
-  padding: 0;
+/* Определяем дефолтные значения переменных (например, для светлой темы по умолчанию) */
+:root {
+  --bg-color: #f5f5f5;
+}
+
+/* Тёмная тема для корневого элемента */
+html.dark {
+  --bg-color: #121212;
+}
+
+/* Фон всего документа */
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
   font-family: 'Montserrat', sans-serif;
 }
 
+/* Основной контейнер приложения */
 .app {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Светлая тема */
+.app.light {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --link-color: #007bff;
+  --card-bg: #fff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Тёмная тема */
+.app.dark {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --link-color: #66ccff;
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Обеспечиваем, чтобы фон body использовал текущую тему */
+body {
+  background-color: var(--bg-color);
+}
+
+/* Глобальные стили для ссылок */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 /* Header */
@@ -24,7 +74,7 @@ body {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #333;
+  border: 4px solid var(--text-color);
 }
 
 .bio {
@@ -42,7 +92,8 @@ body {
 
 .social-link {
   font-size: 2rem;
-  color: #333;
+  /* Используем переменную для цвета */
+  color: var(--text-color);
   transition: color 0.3s;
 }
 
@@ -61,6 +112,11 @@ body {
   height: auto;
 }
 
+/* Для тёмной темы GitHub календаря применяем фильтр */
+.app.dark .github-calendar img {
+  filter: invert(1) brightness(0.8);
+}
+
 /* Projects Grid */
 .projects {
   margin-bottom: 40px;
@@ -74,16 +130,15 @@ body {
 
 /* Project Card */
 .project-card {
-  background: #fff;
+  background: var(--card-bg);
+  color: var(--text-color);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px var(--card-shadow);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* Убираем фиксированную высоту, чтобы карточки могли свободно расти */
-  /* height: 100%; */
-  margin-bottom: 20px; /* Дополнительный отступ между карточками */
+  margin-bottom: 20px;
 }
 
 .project-content h3 {
@@ -105,12 +160,34 @@ body {
   gap: 5px;
 }
 
-/* Image Slider и Single Image */
-.image-slider {
-  position: relative;
-  margin: 20px 0;
+.app.dark .badge {
+  background: #333;
 }
 
+/* Topics */
+.topics {
+  margin: 10px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.topic {
+  display: inline-block;
+  background: #eee;
+  color: #333;
+  padding: 3px 7px;
+  border-radius: 3px;
+  margin: 5px 2px;
+  font-size: 0.8rem;
+}
+
+.app.dark .topic {
+  background: #333;
+  color: #eee;
+}
+
+/* Изображения в карточках */
 .image-slider img.project-image,
 .image-single img.project-image {
   display: block;
@@ -142,7 +219,7 @@ body {
 
 /* Скелетон-анимация */
 .skeleton {
-  background: #ddd;
+  background: var(--card-bg);
   border-radius: 5px;
   margin: 10px 0;
   animation: skeleton-loading 1s linear infinite alternate;
@@ -157,16 +234,18 @@ body {
   }
 }
 
-.topics {
-  margin: 10px 0px;
+.skeleton.header-skeleton {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 10px auto;
+  align-content: center;
 }
 
-.topic {
-  display: inline-block;
-  background: #eee;
-  color: #333;
-  padding: 3px 7px;
-  border-radius: 3px;
-  margin: 5px 2px;
-  font-size: 0.8rem;
+.skeleton.projects-skeleton {
+  width: 85%;
+  height: 150px;
+  border-radius: 10px;
+  align-content: center;
+  margin: 10px auto;
 }

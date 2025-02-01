@@ -1,50 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
-import { fetchReadmeImages } from '../utils/fetchReadmeImages';
 
 function Projects() {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
-    // Получаем репозитории с темами
     useEffect(() => {
         fetch('https://api.github.com/users/NickLitwinow/repos', {
             headers: {
                 Accept: 'application/vnd.github.mercy-preview+json',
             },
         })
-            .then((res) => res.json())
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error('Error fetching repositories');
+                }
+                return res.json();
+            })
             .then(async (data) => {
-                // Оставляем только репозитории с описанием
                 const filtered = data.filter(
                     (repo) => repo.description && repo.description.trim() !== ''
                 );
-                // Для каждого репозитория получаем изображения из README
-                const augmented = await Promise.all(
-                    filtered.map(async (repo) => {
-                        const images = await fetchReadmeImages(repo.owner.login, repo.name);
-                        return { ...repo, readmeImages: images };
-                    })
-                );
-
-                // Сортировка проектов (пример сортировки по звёздам, затем по наличию изображений)
-                const sortedProjects = augmented.sort((a, b) => {
-                    if (a.stargazers_count !== b.stargazers_count) {
-                        return b.stargazers_count - a.stargazers_count;
-                    } else {
-                        return new Date(b.updated_at) - new Date(a.updated_at);
-                    }
-                });
-                setProjects(sortedProjects);
+                // Можно добавить обработку изображений для каждого репозитория (как показано ранее)
+                setProjects(filtered);
                 setLoading(false);
             })
-            .catch((err) => console.error(err));
+            .catch((err) => {
+                console.error('Error fetching projects:', err);
+                setError(true);
+                setLoading(false);
+            });
     }, []);
 
     if (loading) {
         return (
-            <div className="skeleton projects-skeleton"></div>
+            <div className="skeleton projects-skeleton">
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="skeleton projects-skeleton">
+            </div>
         );
     }
 
