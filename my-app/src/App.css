@@ -169,7 +169,7 @@ a {
   margin: 10px 0px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  /*gap: 10px;*/
 }
 
 .topic {
