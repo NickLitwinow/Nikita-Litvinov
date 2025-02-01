@@ -4,6 +4,11 @@ import { motion } from 'framer-motion';
 import './Contact.css';
 
 const Contact = () => {
+    const handleEmailClick = (e) => {
+        e.preventDefault();
+        window.open("mailto:nicklitvinow@gmail.com", "_self");
+    };
+
     return (
         <motion.div
             className="contact-minimal"
@@ -11,7 +16,11 @@ const Contact = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
-            <a href="mailto:nicklitvinow@gmail.com&body=привет?subject=вопрос" className="contact-link">
+            <a
+                href="mailto:nicklitvinow@gmail.com"
+                className="contact-link"
+                onClick={handleEmailClick}
+            >
                 <FaPaperPlane className="paper-plane-icon" />
                 <span>Email Me</span>
             </a>
