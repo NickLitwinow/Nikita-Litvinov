@@ -1,0 +1,26 @@
+.contact-minimal {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.contact-link:hover {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.paper-plane-icon {
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
