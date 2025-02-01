@@ -1,9 +1,11 @@
-# Portfolio
+# React Portfolio
 
-<img width="827" alt="Screenshot 2025-02-01 at 23 48 45" src="https://github.com/user-attachments/assets/b0382f52-93bc-4a0d-890c-57d45d4b35e7" />
+<div align="center">
+  <img width="1425" alt="Screenshot 2025-02-01 at 23 52 11" src="https://github.com/user-attachments/assets/d5b50f6f-5070-43ef-8656-6bca1d0d0436" />
+</div>
 
-
-A modern, dynamic portfolio website built with React. Этот проект объединяет данные из GitHub, современные анимации и удобный интерфейс для демонстрации проектов, социальных ссылок и активности на GitHub.
+### A modern, dynamic portfolio website built with React.
+Этот проект объединяет данные из GitHub, современные анимации и удобный интерфейс для демонстрации проектов, социальных ссылок и активности на GitHub.
 
 ## О проекте
 
