@@ -17,7 +17,7 @@ function Header() {
     }, []);
 
     if (loading) {
-        return <div className="skeleton header-skeleton">Загрузка...</div>;
+        return <div className="skeleton header-skeleton"></div>;
     }
 
     return (

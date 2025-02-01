@@ -37,7 +37,7 @@ function ProjectCard({ project }) {
                 </div>
 
                 {loadingImages ? (
-                    <div className="skeleton image-skeleton">Загрузка изображений...</div>
+                    <div className="skeleton image-skeleton"></div>
                 ) : images.length > 0 ? (
                     <div className="image-single">
                         <img

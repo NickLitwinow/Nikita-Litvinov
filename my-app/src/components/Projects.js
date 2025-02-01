@@ -44,7 +44,7 @@ function Projects() {
 
     if (loading) {
         return (
-            <div className="skeleton projects-skeleton">Загрузка проектов...</div>
+            <div className="skeleton projects-skeleton"></div>
         );
     }
 
