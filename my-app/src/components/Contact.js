@@ -14,7 +14,7 @@ const Contact = () => {
             className="contact-minimal"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 1, delay: 0.5 }}
         >
             <a
                 href="mailto:nicklitvinow@gmail.com"
