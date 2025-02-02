@@ -1,7 +1,7 @@
 # React Portfolio
 
 <div align="center">
-  <img width="1425" alt="Screenshot 2025-02-01 at 23 52 11" src="https://github.com/user-attachments/assets/d5b50f6f-5070-43ef-8656-6bca1d0d0436" />
+  ![hse_python_capstone_project](https://github.com/user-attachments/assets/388c698d-5758-473c-aa12-50eab1d78244)
 </div>
 
 ## About the Project
